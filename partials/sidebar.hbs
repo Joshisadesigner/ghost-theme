@@ -1,0 +1,32 @@
+{{!-- The blog sidebar header --}}
+<header class="sb__header">
+    <div class="sb__cover" style="background-image: url({{@blog.cover}})">
+        <div class="sb__avatar">
+            <figure>
+                <img class="sb__avatar-image" src="{{@blog.logo}}" alt="{{@blog.title}}">
+            </figure>
+        </div>
+        <div class="sb__blogname">
+            <h1>{{@blog.title}}</h1>
+        </div>
+    </div>
+</header>
+
+{{!-- The blog information --}}
+<div class="sb__info">
+    <p>
+        {{@blog.description}}
+    </p>
+</div>
+
+{{!-- The blog navigation links --}}
+{{navigation}}
+
+<div class="sb__tags">
+    {{#foreach posts}}
+        {{#foreach tags limit="1"}}
+            <a href="{{url}}">#{{name}}</a>
+        {{/foreach}}
+    {{/foreach}}
+    <a href="#">more...</a>
+</div>
