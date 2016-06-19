@@ -1,32 +1,44 @@
 {{!-- The blog sidebar header --}}
-<header class="sb__header">
-    <div class="sb__cover" style="background-image: url({{@blog.cover}})">
-        <div class="sb__avatar">
-            <figure>
-                <img class="sb__avatar-image" src="{{@blog.logo}}" alt="{{@blog.title}}">
-            </figure>
+
+
+<aside class="sb">
+
+    <section class="sb__container">
+
+        <header class="sb__header">
+            <div class="sb__cover" style="background-image: url({{@blog.cover}})">
+                <div class="sb__avatar">
+                    <div class="sb__blog-name">
+
+                        <figure>
+                            <img class="sb__avatar-image" src="{{@blog.logo}}" alt="{{@blog.title}}" />
+                        </figure>
+
+                        <h1>{{@blog.title}}</h1>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        {{!-- The blog information --}}
+        <div class="sb__info sb_margin">
+            <p>
+                {{@blog.description}}
+            </p>
         </div>
-        <div class="sb__blogname">
-            <h1>{{@blog.title}}</h1>
+
+        {{!-- The blog navigation links --}}
+        {{navigation}}
+
+        <div class="sb__tags sb_margin">
+            {{#foreach posts}}
+                {{#foreach tags limit="2"}}
+                    <a href="{{url}}">#{{name}}</a>
+                {{/foreach}}
+            {{/foreach}}
+            <a href="#">more...</a>
         </div>
-    </div>
-</header>
 
-{{!-- The blog information --}}
-<div class="sb__info">
-    <p>
-        {{@blog.description}}
-    </p>
-</div>
+    </section>
 
-{{!-- The blog navigation links --}}
-{{navigation}}
-
-<div class="sb__tags">
-    {{#foreach posts}}
-        {{#foreach tags limit="1"}}
-            <a href="{{url}}">#{{name}}</a>
-        {{/foreach}}
-    {{/foreach}}
-    <a href="#">more...</a>
-</div>
+</aside>

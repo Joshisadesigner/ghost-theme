@@ -1,0 +1,17 @@
+html {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+a {
+    text-decoration: none;
+}
+
+figure {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+}

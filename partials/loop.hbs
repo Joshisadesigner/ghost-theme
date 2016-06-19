@@ -1,34 +1,44 @@
 <!-- this is the post loop - each post will be output using this markup -->
-{{#foreach posts}}
-    <article class="{{post_class}}">
-        {{#if image}}
-            <figure class="post-featured-img">
-                <a href="{{url}}">
-                    <img src="{{image}}" alt="{{title}}" />
-                </a>
-            </figure>
-        {{/if}}
 
-        <header class="post-header">
-            <h2 class="post-title">
-                <a href="{{url}}">{{title}}</a>
-            </h2>
-        </header>
-        
-        <footer class="post-meta">
-            {{#if autor.image}}<img class="author-thumb" src="{{autor.image}}" alt="{{author.name}}" />{{/if}}
-            {{autor}}
+<main class="cont" role="main">
 
-            <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">
-                {{date format="DD MMMM YYYY"}}
-            </time>
+    {{#foreach posts}}
+        <article class="crd {{post_class}}">
+            <div class="crd__inside">
+                {{#if image}}
+                    <figure class="crd__featured-img">
+                        <a href="{{url}}">
+                            <img src="{{image}}" alt="{{title}}" />
+                        </a>
+                    </figure>
+                {{/if}}
 
-            <div class="post-tags">
-                {{tags}}
+                <header class="crd__header">
+                    <h3 class="crd__title">
+                        <a href="{{url}}">{{title}}</a>
+                    </h3>
+                </header>
+
+                <footer class="crd__meta">
+                    <time class="crd__post-date" datetime="{{date format="YYYY-MM-DD"}}">
+                        {{date format="DD MMMM YYYY"}}
+                    </time>
+
+                    <div class="crd__tags-toggler">
+                        <i class="fa fa-tags" aria-hidden="true"></i> tags
+
+                        <div class="crd__tags">
+                            {{#foreach tags limit="20"}}
+                                <a href="{{url}}">#{{name}}</a>
+                            {{/foreach}}
+                        </div>
+                    </div>
+                </footer>
             </div>
-        </footer>
-    </article>
-{{/foreach}}
+        </article>
+    {{/foreach}}
 
-<!-- Previous/next page links - displayed on every page -->
-{{pagination}}
+    <!-- Previous/next page links - displayed on every page -->
+    {{pagination}}
+
+</main>
