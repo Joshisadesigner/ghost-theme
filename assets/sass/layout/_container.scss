@@ -1,7 +1,12 @@
 .site-wrapper {
     height: 100%;
     display: flex;
-    flex-flow: row column;
+    flex-flow: row;
     overflow: hidden;
     background: url(../images/bg_pattern.jpg);
+
+    @include mq( $until: tablet ) {
+        flex-flow: column;
+        height: auto;
+    }
 }

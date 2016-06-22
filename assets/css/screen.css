@@ -413,15 +413,16 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1.8;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
 }
 
-html {
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
+html, body {
+  height: 100%;
 }
 
 a {
@@ -443,10 +444,18 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-flow: row column;
-      flex-flow: row column;
+  -ms-flex-flow: row;
+      flex-flow: row;
   overflow: hidden;
   background: url(../images/bg_pattern.jpg);
+}
+
+@media (max-width: 46.24em) {
+  .site-wrapper {
+    -ms-flex-flow: column;
+        flex-flow: column;
+    height: auto;
+  }
 }
 
 .sb {
@@ -455,6 +464,14 @@ img {
   -webkit-box-flex: 0;
       -ms-flex: 0 360px;
           flex: 0 360px;
+}
+
+@media (max-width: 46.24em) {
+  .sb {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
 }
 
 .sb__container {
@@ -466,9 +483,22 @@ img {
   margin-bottom: 50px;
 }
 
+@media (max-width: 46.24em) {
+  .sb__header {
+    margin-bottom: 0;
+  }
+}
+
 .sb__cover {
   max-height: 360px;
   padding-top: 120px;
+}
+
+@media (max-width: 46.24em) {
+  .sb__cover {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 }
 
 .sb__avatar-image {
@@ -476,6 +506,14 @@ img {
   border-radius: 50%;
   border: 5px solid #e3e3e3;
   max-width: 105px;
+}
+
+@media (max-width: 46.24em) {
+  .sb__avatar-image {
+    margin-right: 10px;
+    border: 3px solid #e3e3e3;
+    max-width: 65px;
+  }
 }
 
 .sb__blog-name {
@@ -499,8 +537,61 @@ img {
   letter-spacing: 1px;
 }
 
+.sb__blog-name i {
+  margin-left: auto;
+  font-size: 150%;
+}
+
 .sb__blog-name figure {
   margin-top: -48px;
+}
+
+@media (max-width: 46.24em) {
+  .sb__blog-name figure {
+    margin-top: -23px;
+  }
+}
+
+.sb__mobile {
+  display: block;
+}
+
+@media (max-width: 46.24em) {
+  .sb__mobile {
+    display: none;
+  }
+}
+
+.sb__mobile-close {
+  display: none;
+}
+
+@media (max-width: 46.24em) {
+  .sb__mobile {
+    background: rgba(0, 0, 0, 0.95);
+    height: 100%;
+    top: 0;
+    overflow: auto;
+    position: fixed;
+    z-index: 9999;
+    color: #999;
+  }
+  .sb__mobile-close {
+    display: block;
+    text-align: right;
+    font-size: 250%;
+  }
+  .sb__mobile-close i {
+    -webkit-transition: -webkit-transform .264s;
+    transition: -webkit-transform .264s;
+    transition: transform .264s;
+    transition: transform .264s, -webkit-transform .264s;
+    color: #fff;
+  }
+  .sb__mobile-close i:hover {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 .sb__info {
@@ -510,6 +601,12 @@ img {
   font-size: 18px;
   line-height: 1.8;
   color: #666;
+}
+
+@media (max-width: 46.24em) {
+  .sb__info {
+    color: #999;
+  }
 }
 
 .sb__nav {
@@ -522,6 +619,14 @@ img {
   display: block;
   padding: 10px 0 10px 50px;
   color: #666;
+}
+
+@media (max-width: 46.24em) {
+  .sb__nav a {
+    padding: 10px 0;
+    color: #999;
+    text-align: center;
+  }
 }
 
 .sb__nav a:hover {
@@ -612,9 +717,14 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow: auto;
   -ms-flex-flow: row wrap;
       flex-flow: row wrap;
-  overflow: auto;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
 }
 
 .crd {
@@ -625,6 +735,24 @@ img {
   height: auto;
   padding: 30px;
   box-sizing: border-box;
+}
+
+@media (max-width: 1860px) {
+  .crd {
+    width: 33.3333333333%;
+  }
+}
+
+@media (max-width: 1590px) {
+  .crd {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1065px) {
+  .crd {
+    width: 100%;
+  }
 }
 
 .crd__inside {
@@ -638,21 +766,16 @@ img {
       flex-flow: nowrap column;
   border-radius: 3px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+  -webkit-transition: all 1.2s;
+  transition: all 1.2s;
 }
 
 .crd__inside figure {
   overflow: hidden;
-  max-height: 170px;
+  height: 170px;
 }
 
-.crd__inside img {
-  -webkit-transition: -webkit-transform 1.2s;
-  transition: -webkit-transform 1.2s;
-  transition: transform 1.2s;
-  transition: transform 1.2s, -webkit-transform 1.2s;
-}
-
-.crd__inside:hover img {
+.crd__inside:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
@@ -672,6 +795,9 @@ img {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
   margin: 0 20px 20px;
 }
 
@@ -686,18 +812,20 @@ img {
   cursor: pointer;
   font-size: 80%;
   font-weight: bold;
-  line-height: 1;
-  padding: 6px 10px 0;
-  border-radius: 3px;
-  border: 1px solid #C5C5C5;
+  border-color: #C5C5C5;
   color: #ADADAD;
+}
+
+.crd__tags-toggler.active {
+  color: #FFF;
+  background-color: #ADADAD;
 }
 
 .crd__tags {
   display: none;
   position: absolute;
   z-index: 9999;
-  top: 30px;
+  top: 45px;
   right: 0;
   width: 300%;
   padding: 10px 15px;
@@ -717,8 +845,57 @@ img {
   color: #333;
 }
 
+.crd__tags::before {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #FFF;
+  position: absolute;
+  right: 10px;
+  top: -6px;
+  border-left: 1px solid #C5C5C5;
+  border-top: 1px solid #C5C5C5;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
 .show-tags {
   display: block;
+}
+
+.pg {
+  margin-top: 30px;
+  padding: 30px;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  border-top: 1px solid #ebedd9;
+}
+
+.pg__prev {
+  color: #fff;
+  background-color: #666;
+}
+
+.pg__next {
+  color: #fff;
+  background-color: #666;
+  margin-left: auto;
+}
+
+.button {
+  padding: 10px;
+  line-height: 1;
+  border: 1px;
+  border-radius: 3px;
+  border-style: solid;
 }
 
 /*# sourceMappingURL=screen.css.map */

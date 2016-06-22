@@ -3,22 +3,41 @@
     padding: 0;
     flex: 0 360px;
 
+    @include mq( $until: tablet ) {
+        flex: 1;
+    }
+
     &__container {
         overflow: auto;
     }
     &__header {
         border-bottom: 10px solid #ebedd9;
         margin-bottom: 50px;
+
+        @include mq( $until: tablet ) {
+            margin-bottom: 0;
+        }
     }
     &__cover {
         max-height: 360px;
         padding-top: 120px;
+
+        @include mq( $until: tablet ) {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
     }
     &__avatar-image {
         margin-right: 20px;
         border-radius: 50%;
         border: 5px solid #e3e3e3;
         max-width: 105px;
+
+        @include mq( $until: tablet ) {
+            margin-right: 10px;
+            border: 3px solid #e3e3e3;
+            max-width: 65px;
+        }
     }
     &__blog-name {
         background: rgba( 0, 0, 0, .8 );
@@ -34,10 +53,58 @@
             font-size: 25px;
             letter-spacing: 1px;
         }
+
+        i {
+            margin-left: auto;
+            font-size: 150%;
+        }
         figure {
             margin-top: -48px;
+
+            @include mq( $until: tablet ) {
+                margin-top: -23px;
+            }
         }
     }
+
+    &__mobile {
+
+        display: block;
+
+        @include mq( $until: tablet ) {
+            display: none;
+        }
+
+        &-close {
+            display: none;
+        }
+
+        @include mq( $until: tablet ) {
+            background: rgba(0,0,0, .95);
+            height: 100%;
+            top: 0;
+            overflow: auto;
+            position: fixed;
+            z-index: 9999;
+            color: $color__text_brand-4;
+
+            &-close {
+                display: block;
+                text-align: right;
+                font-size: 250%;
+
+                i {
+                    transition: transform .264s;
+                    color: #fff;
+                    &:hover {
+                    transform: rotate( 360deg );
+                    }
+                }
+            }
+        }
+
+    }
+
     &__info {
         border-bottom: 1px dotted $color__dash-line;
         padding-bottom: 30px;
@@ -45,6 +112,10 @@
         font-size: 18px;
         line-height: 1.8;
         color: $color__text_brand-2;
+
+        @include mq( $until: tablet ) {
+            color: $color__text_brand-4;
+        }
     }
 
     &__nav {
@@ -56,6 +127,12 @@
             display: block;
             padding: 10px 0 10px 50px;
             color: $color__text_brand-2;
+
+            @include mq( $until: tablet ) {
+                padding: 10px 0;
+                color: $color__text_brand-4;
+                text-align: center;
+            }
         }
 
         a:hover {

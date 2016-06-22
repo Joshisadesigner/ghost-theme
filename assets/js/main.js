@@ -8,10 +8,12 @@ $( document ).ready( function() {
         if( e.hasClass( 'show-tags' ) ) {
             all.removeClass( 'show-tags' );
             e.removeClass( 'show-tags' );
+            $( this ).removeClass( 'active' );
         }
         else {
             all.removeClass( 'show-tags' );
             e.addClass( 'show-tags' );
+            $( this ).addClass( 'active' );
         }
     })
 })

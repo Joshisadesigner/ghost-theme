@@ -1,0 +1,21 @@
+.pg {
+    margin-top: 30px;
+    padding: 30px;
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-top: 1px solid #ebedd9;
+
+    &__prev {
+        color: #fff;
+        background-color: $color__text_brand-2;
+    }
+
+    &__next {
+        color: #fff;
+        background-color: $color__text_brand-2;
+        margin-left: auto;
+    }
+
+}

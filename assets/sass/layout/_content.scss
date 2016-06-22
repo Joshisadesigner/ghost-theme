@@ -2,8 +2,10 @@
   padding: 30px 15px 1px;
   flex: 1;
   display: flex;
-  flex-flow: row wrap;
   overflow: auto;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  align-content: flex-start;
 }
 
 .crd {
@@ -13,6 +15,18 @@
   padding: 30px;
   box-sizing: border-box;
 
+  @media ( max-width: 1860px ) {
+      width: 33.3333333333%;
+  }
+
+  @media ( max-width: 1590px ) {
+      width: 50%;
+  }
+
+  @media ( max-width: 1065px ) {
+      width: 100%;
+  }
+
   &__inside {
     width: 100%;
     height: 100%;
@@ -21,17 +35,17 @@
     flex-flow: nowrap column;
     border-radius: 3px;
     box-shadow: 2px 2px 4px rgba( #000, .15 );
+    transition: all 1.2s;
 
     figure {
         overflow: hidden;
-        max-height: 170px;
+        height: 170px;
     }
 
     img {
-        transition: transform 1.2s;
     }
 
-    &:hover img {
+    &:hover {
         transform: scale( 1.1 );
     }
   }
@@ -47,6 +61,7 @@
   &__meta {
       display: flex;
       justify-content: space-between;
+      align-items: baseline;
       margin: 0 20px 20px;
   }
 
@@ -61,18 +76,20 @@
       cursor: pointer;
       font-size: 80%;
       font-weight: bold;
-      line-height: 1;
-      padding: 6px 10px 0;
-      border-radius: 3px;
-      border: 1px solid $color__button-thertiary_border;
+      border-color: $color__button-thertiary_border;
       color: $color__button-thertiary;
+
+      &.active {
+          color: #FFF;
+          background-color: $color__button-thertiary;
+      }
   }
 
   &__tags {
       display: none;
       position: absolute;
       z-index: 9999;
-      top: 30px;
+      top: 45px;
       right: 0;
       width: 300%;
       padding: 10px 15px;
@@ -89,6 +106,20 @@
           &:hover {
               color: $color__text_brand-3;
           }
+      }
+
+      &::before {
+          content: '';
+          display: block;
+          width: 10px;
+          height: 10px;
+          background: #FFF;
+          position: absolute;
+          right: 10px;
+          top: -6px;
+          border-left: 1px solid $color__button-thertiary_border;
+          border-top: 1px solid $color__button-thertiary_border;
+          transform: rotate(45deg);
       }
   }
 }

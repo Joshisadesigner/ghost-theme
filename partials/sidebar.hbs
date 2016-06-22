@@ -15,29 +15,38 @@
                         </figure>
 
                         <h1>{{@blog.title}}</h1>
+
+                        <i class="fa fa-bars" aria-hidden="true"></i>
                     </div>
                 </div>
             </div>
         </header>
 
-        {{!-- The blog information --}}
-        <div class="sb__info sb_margin">
-            <p>
-                {{@blog.description}}
-            </p>
-        </div>
+        <section class="sb__mobile">
 
-        {{!-- The blog navigation links --}}
-        {{navigation}}
+            <div class="sb__mobile-close sb_margin">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </div>
 
-        <div class="sb__tags sb_margin">
-            {{#foreach posts}}
-                {{#foreach tags limit="2"}}
-                    <a href="{{url}}">#{{name}}</a>
+            {{!-- The blog information --}}
+            <div class="sb__info sb_margin">
+                <p>
+                    {{@blog.description}}
+                </p>
+            </div>
+
+            {{!-- The blog navigation links --}}
+            {{navigation}}
+
+            <div class="sb__tags sb_margin">
+                {{#foreach posts}}
+                    {{#foreach tags limit="2"}}
+                        <a href="{{url}}">#{{name}}</a>
+                    {{/foreach}}
                 {{/foreach}}
-            {{/foreach}}
-            <a href="#">more...</a>
-        </div>
+                <a href="#">more...</a>
+            </div>
+        </section>
 
     </section>
 
