@@ -1,58 +1,96 @@
+{{!< default}}
+
+{{!-- sidebar (avatar, info, links) --}}
+{{> "sidebar"}}
+
 <!-- Everything inside the #post tags pulls data from the post -->
-{{#post}}
+<main class="cont" role="main">
 
-    <article class="{{poast_class}}">
-        <header class="post-header">
-            <h1 class="post-title">{{title}}</h1>
-        </header>
-        <section class="post-meta">
-            <p>
-                by {{author}} on
+    <article class="post">
 
-                <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">
-                    {{date format="MMMM DD, YYYY"}}
-                </time>
-            </p>
-        </section>
-        <section class="post-content">
-            {{content}}
-        </section>
-        <footer class="post-footer">
-            <div class="author">
-                {{#author}}
-                    {{#if image}}
-                        <figure class="author-image">
-                            <a class="img" href="{{url}}">
-                                <img src="{{image}}" alt="{{author}}" />
-                                <span class="hidden">{{name}}'s Picture'</span>
-                            </a>
-                        </figure>
-                    {{/if}}
-                    <div class="author">
-                        <a href="{{url}}">{{name}}</a>
-                    </div>
-                    {{#if twitter}}
-                        <div class="author-twitter">
-                            <a href="{{twitter_url}}">{{twitter}}</a>
-                        </div>
-                    {{/if}}
-                {{/author}}
-            </div>
-            {{#if tags}}
-                <div class="post-tags">
-                    {{#foreach tags}}
-                    <ul>
-                        <li>
-                            <a href="{{url}}" title="{{name}}" class="tag-{{id}}">
-                                {{name}}
-                            </a>
-                        </li>
-                    </ul>
-                    {{/foreach}}
-                </div>
+        {{#post}}
+
+            {{#if image}}
+                <figure class="post__featured-img">
+                        <img src="{{image}}" alt="{{title}}" />
+                </figure>
             {{/if}}
 
-        </footer>
-    </article>
+            <article class="{{poast_class}}">
+                <div class="post__date">
+                    <div class="post__date-line"></div>
+                    <div class="post__date-data">
+                        {{date format="MMMM DD, YYYY"}}
+                    </div>
+                    <div class="post__date-line"></div>
+                </div>
+                <header class="post-header">
+                    <h2 class="post__title">{{title}}</h2>
+                </header>
+                <section class="post__share">
+                        <a class="post__share-button share-tw button" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
+                           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                            Share on Twitter
+                        </a>
+                        <a class="post__share-button share-fb button" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                            Share on Facebook
+                        </a>
+                        <a class="post__share-button share-gp button" href="https://plus.google.com/share?url={{url absolute="true"}}"
+                           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                            Share on Google+
+                        </a>
+                </section>
+                <section class="post-meta">
+                    <p>
+                        by {{author}} on
 
-{{/post}}
+                        <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">
+                            {{date format="MMMM DD, YYYY"}}
+                        </time>
+                    </p>
+                </section>
+                <section class="post-content">
+                    {{content}}
+                </section>
+                <footer class="post-footer">
+                    <div class="author">
+                        {{#author}}
+                            {{#if image}}
+                                <figure class="author-image">
+                                    <a class="img" href="{{url}}">
+                                        <img src="{{image}}" alt="{{author}}" />
+                                        <span class="hidden">{{name}}'s Picture'</span>
+                                    </a>
+                                </figure>
+                            {{/if}}
+                            <div class="author">
+                                <a href="{{url}}">{{name}}</a>
+                            </div>
+                            {{#if twitter}}
+                                <div class="author-twitter">
+                                    <a href="{{twitter_url}}">{{twitter}}</a>
+                                </div>
+                            {{/if}}
+                        {{/author}}
+                    </div>
+                    {{#if tags}}
+                        <div class="post-tags">
+                            {{#foreach tags}}
+                                <ul>
+                                    <li>
+                                        <a href="{{url}}" title="{{name}}" class="tag-{{id}}">
+                                    {{name}}
+                                </a>
+                                    </li>
+                                </ul>
+                            {{/foreach}}
+                        </div>
+                    {{/if}}
+
+                </footer>
+            </article>
+
+        {{/post}}
+    </article>
+</main>

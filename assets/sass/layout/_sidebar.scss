@@ -51,6 +51,7 @@
             height: 25px;
             line-height: 1;
             font-size: 25px;
+            font-weight: bold;
             letter-spacing: 1px;
         }
 
@@ -70,9 +71,11 @@
     &__mobile {
 
         display: block;
+        transition: .25s ease-in-out;
 
         @include mq( $until: tablet ) {
             display: none;
+            padding-top: 70px;
         }
 
         &-close {
@@ -130,7 +133,7 @@
 
             @include mq( $until: tablet ) {
                 padding: 10px 0;
-                color: $color__text_brand-4;
+                color: #FFF;
                 text-align: center;
             }
         }
@@ -190,5 +193,70 @@
 
     &_margin {
         margin: 30px;
+    }
+
+    &__hamb {
+        position: relative;
+        z-index: 99999;
+        margin-left: auto;
+        width: 20px;
+        height: 25px;
+        cursor: pointer;
+        transition: .5s ease-in-out;
+
+        @include mq( $from: tablet ) {
+            display: none;
+        }
+
+        span {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            border-radius: 2px;
+            opacity: 1;
+            background-color: white;
+            transition: .25s ease-in-out;
+
+            &:nth-child(1) {
+                top: 4px;
+            }
+
+            &:nth-child(2) {
+                top: 11px;
+            }
+
+            &:nth-child(4) {
+                top: 11px;
+            }
+
+            &:nth-child(3) {
+                top: 18px;
+            }
+        }
+
+
+        &.open {
+
+            span:nth-child(1) {
+                width: 0px;
+                opacity: 0;
+                top: 11px
+            }
+
+            span:nth-child(2) {
+                transform: rotate(45deg);
+            }
+
+            span:nth-child(4) {
+                transform: rotate(-45deg);
+            }
+
+            span:nth-child(3) {
+                width: 0px;
+                opacity: 0;
+                top: 11px
+            }
+        }
     }
 }

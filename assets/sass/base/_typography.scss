@@ -8,4 +8,11 @@ body {
 
 h1, h2, h3, h4, h5 , h6 {
     line-height: 1.2;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+p {
+    color: $color__text_brand-3 ;
+    font-weight: normal;
 }

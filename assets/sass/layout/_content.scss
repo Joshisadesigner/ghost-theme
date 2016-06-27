@@ -6,6 +6,10 @@
   flex-flow: row wrap;
   align-items: flex-start;
   align-content: flex-start;
+
+  &-post {
+      background-color: white;
+  }
 }
 
 .crd {

@@ -14,3 +14,11 @@ img {
     width: 100%;
     display: block;
 }
+
+pre {
+    overflow: scroll;
+}
+
+code {
+    overflow: auto;
+}
