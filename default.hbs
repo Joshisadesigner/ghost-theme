@@ -11,8 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />{{!-- Brand icon --}}
     <link rel="shortcut icon" href="{{asset "favicon.ico"}}">{{!-- Style'n'Scripts --}}
     <link rel="stylesheet" href="{{asset "css/screen.css"}}" />
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,300italic,400italic,600italic,700italic,800,800italic' rel='stylesheet' type='text/css'>
-    {{!-- Ghost outputs important style and meta data with this tag --}}
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,300italic,400italic,600italic,700italic,800,800italic' rel='stylesheet' type='text/css'>{{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}
 </head>
 
@@ -27,11 +26,25 @@
 
     {{!-- jQuery nees to come before `{{ghost_foot}}
     ` so that jQuery can be used in code injection --}} <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
         {{!-- Ghost outputs important scripts and data with this tag --}}
         {{ghost_foot}}
 
+            <div id="fb-root"></div>
+            <script>
+                (function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
+
             {{!-- the main JavaScript file for theme --}}
             <script src="https://use.fontawesome.com/3dfed94a7b.js"></script>
+            <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
             <script type="text/javascript" src="{{asset "js/main.js"}}"></script>
 
 </body>

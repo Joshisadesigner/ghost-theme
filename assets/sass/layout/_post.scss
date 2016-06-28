@@ -1,0 +1,131 @@
+.post {
+    max-width: 720px;
+    margin: 0 auto 30px;
+    padding: 30px;
+    background-color: #fff;
+    &__featured-img {
+        max-height: 360px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #444;
+    }
+    &__title {
+        font-size: 330%;
+        color: #444;
+        margin: 0;
+        border-bottom: 1px dotted #aaa;
+        padding-bottom: 30px;
+    }
+    &__share {
+        display: flex;
+        margin: 20px 0;
+    }
+    &__share-button {
+        font-weight: bold;
+        margin-right: 10px;
+        font-size: 80%;
+        &.share-tw {
+            color: $color__twitter;
+            &:hover {
+                color: #FFF;
+                background-color: $color__twitter;
+            }
+        }
+        &.share-fb {
+            color: $color__facebook;
+            &:hover {
+                color: #FFF;
+                background-color: $color__facebook;
+            }
+        }
+        &.share-gp {
+            color: $color__googleplus;
+            &:hover {
+                color: #FFF;
+                background-color: $color__googleplus;
+            }
+        }
+        span {
+            @include mq( $until: tablet ) {
+                display: none;
+            }
+        }
+    }
+    &__meta {
+        color: $color__text_brand-4;
+        font-size: 90%;
+    }
+    &__date {
+        display: flex;
+        color: $color__text_brand-4;
+        margin-bottom: 20px;
+        @include mq( $until: tablet ) {
+            font-size: 80%;
+        }
+        &-data {
+            flex: 1;
+            text-align: center;
+            @include mq( $until: tablet ) {
+                flex: 2;
+            }
+        }
+    }
+    .line {
+        flex: 2;
+        position: relative;
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            border-top: 1px dotted #aaa;
+            top: 50%;
+        }
+        @include mq( $until: tablet ) {
+            flex: 1;
+        }
+    }
+    &__footer {
+        text-align: center;
+        display: flex;
+        flex-flow: column;
+        margin-bottom: 30px;
+    }
+    &__author-image-container {
+        display: flex;
+    }
+    &__author-image {
+        @extend .sb__avatar-image;
+        position: relative;
+        margin: 0 20px;
+        max-width: 40px;
+        border-width: 3px;
+        position: relative;
+        flex: 1;
+    }
+    &__footer_author {
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+    &__tags {
+        margin-bottom: 20px;
+        color: $color__text_link;
+        a::after {
+            content: "|";
+            display: inline-block;
+            color: $color__text_link;
+        }
+        a:last-child::after {
+            display: none;
+        }
+    }
+}
