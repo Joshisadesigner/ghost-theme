@@ -10,12 +10,18 @@
     &__prev {
         color: #fff;
         background-color: $color__text_brand-2;
+        margin-right: auto;
+
+        &:hover {
+            color: #fff;
+            background-color: $color__text_brand-3;
+        }
     }
 
     &__next {
-        color: #fff;
-        background-color: $color__text_brand-2;
+        @extend .pg__prev;
         margin-left: auto;
+        margin-right: 0;
     }
 
 }

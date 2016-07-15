@@ -4,4 +4,11 @@
     border: 1px;
     border-radius: 3px;
     border-style: solid;
+    text-align: center;
+
+    &:hover {
+        border: 1px;
+        border-radius: 3px;
+        border-style: solid;
+    }
 }

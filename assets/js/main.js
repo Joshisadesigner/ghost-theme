@@ -16,7 +16,7 @@ $(document).ready(function() {
     });
 
     // FRONT PAGE TAGS TOOLTIPS
-    $('.crd__tags-toggler').click(function() {
+    $('#tags-toggler').click(function() {
         var e = $(this).find('.crd__tags'),
             all = $('.crd__tags-toggler').find('.crd__tags');
 

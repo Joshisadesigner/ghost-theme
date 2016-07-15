@@ -1,0 +1,56 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{!-- sidebar (avatar, info, links) --}}
+{{> "sidebar"}}
+
+<!-- this is the post loop - each post will be output using this markup -->
+
+<main class="cont" role="main">
+
+    {{#foreach posts}}
+        <article class="crd">
+            <div class="crd__inside">
+                {{#if image}}
+                    <figure class="crd__featured-img">
+                        <a href="{{url}}">
+                            <img src="{{image}}" alt="{{title}}" />
+                        </a>
+                    </figure>
+                {{/if}}
+
+                <header class="crd__header">
+                    <h3 class="crd__title">
+                        <a href="{{url}}">{{title}}</a>
+                    </h3>
+                </header>
+
+                <section class="crd__excerpt">
+                    <p>
+                        {{excerpt words="20"}}
+                    </p>
+                </section>
+
+                <footer class="crd__meta">
+                    <time class="crd__post-date" datetime="{{date format="YYYY-MM-DD"}}">
+                        {{date format="DD MMMM YYYY"}}
+                    </time>
+
+                    <div class="crd__tags-toggler button">
+                        <i class="fa fa-tags" aria-hidden="true"></i> tags
+
+                        <div class="crd__tags">
+                            {{#foreach tags limit="20"}}
+                                <a href="{{url}}">#{{name}}</a>
+                            {{/foreach}}
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </article>
+    {{/foreach}}
+
+    <!-- Previous/next page links - displayed on every page -->
+    {{pagination}}
+
+</main>

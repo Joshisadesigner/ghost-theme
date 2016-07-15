@@ -11,7 +11,31 @@
       background-color: white;
   }
 }
+.cat {
+  display: flex;
+  width: 100%;
+  height: auto;
+  padding:  0 30px;
+  box-sizing: border-box;
+  background: rgba( 199, 200, 165, .2 );
+  border-radius: 5px;
+  position: relative;
 
+  &__header-title {
+      font-weight: bold;
+      color: $color__text_brand-2;
+  }
+
+  &__header-link {
+      font-weight: normal;
+      float: right;
+      text-transform: uppercase;
+      position: absolute;
+      right: 30px;
+      top: 20px;
+  }
+
+}
 .crd {
   display: flex;
   width: 25%;
@@ -38,8 +62,8 @@
     display: flex;
     flex-flow: nowrap column;
     border-radius: 3px;
-    box-shadow: 2px 2px 4px rgba( #000, .15 );
-    transition: all 1.2s;
+    box-shadow: 0 2px 6px rgba( #000, .15 );
+    transition: all .8s ease-out;
 
     figure {
         overflow: hidden;
@@ -47,10 +71,13 @@
     }
 
     img {
+        transition: all .8s ease-out;
     }
 
     &:hover {
-        transform: scale( 1.1 );
+        box-shadow: 0 6px 8px rgba( #000, .3 );
+
+        img { transform: scale( 1.1 ); }
     }
   }
 
@@ -59,6 +86,16 @@
 
       a {
           color: $color__text_brand-2;
+      }
+  }
+
+  &__excerpt {
+      margin: 0 20px 20px;
+      min-height: 110px;
+      font-size: 90%;
+
+      p {
+      line-height: 2;
       }
   }
 
@@ -71,14 +108,15 @@
 
   &__post-date {
       font-size: 90%;
-      color: $color__text_brand-2;
+      line-height: 1.3;
+      color: $color__button-thertiary;
   }
 
   &__tags-toggler {
       position: relative;
       display: block;
       cursor: pointer;
-      font-size: 80%;
+      font-size: 90%;
       font-weight: bold;
       border-color: $color__button-thertiary_border;
       color: $color__button-thertiary;
@@ -86,6 +124,16 @@
       &.active {
           color: #FFF;
           background-color: $color__button-thertiary;
+      }
+  }
+
+  &__read-more {
+      @extend .crd__tags-toggler;
+      color: $color__button-thertiary;
+
+      &:hover {
+          color: #FFF;
+          background: $color__button-thertiary;
       }
   }
 
