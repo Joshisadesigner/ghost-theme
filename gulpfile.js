@@ -43,37 +43,51 @@ gulp.task( 'browserSync', function() {
 
 });
 
-gulp.task( 'clean:dist', function() {
-  return del.sync( 'test' );
+gulp.task( 'watch', [ 'browserSync', 'sass' ], function() {
+  gulp.watch( 'assets/sass/**/*.scss', ['sass'] );
+  gulp.watch( 'assets/js/**/*.js', browserSync.reload );
+  gulp.watch( '**/*.hbs', browserSync.reload );
 });
 
 gulp.task( 'useref', function() {
-  return gulp.src( '*.hbs' )
+  return gulp.src( '**/*.hbs' )
     .pipe( useref() )
-    .pipe( gulpIf( '*.js', uglify() ) )
-    .pipe( gulpIf( '*.css', cssnano() ) )
-    .pipe( gulp.dest( 'test'))
+    .pipe( gulpIf( '**/*.js', uglify() ) )
+    .pipe( gulpIf( '**/*.css', cssnano() ) )
+    .pipe( gulp.dest( 'dist'))
+});
+
+gulp.task( 'files', function() {
+  return gulp.src( [
+      '!node_modules/**',
+      '!bower_components/**',
+      '!gulpfile.js',
+      '**/*.hbs',
+      '**/*.css',
+      '**/*.js',
+    ] )
+    .pipe( gulpIf( '**/*.js', uglify() ) )
+    .pipe( gulpIf( '**/*.css', cssnano() ) )
+    .pipe( gulp.dest( 'dist'))
 });
 
 gulp.task( 'images', function() {
-  return gulp.src( 'assets/images/**/*.+( png | jpg | gif | svg )' )
+  return gulp.src( 'assets/images/**/*.+(png|jpg|gif|svg)' )
     .pipe( cache( imagemin() ) )
-    .pipe( gulp.dest( 'assets/images/' ) )
+    .pipe( gulp.dest( 'dist/assets/images/' ) )
 });
 
 gulp.task( 'fonts', function () {
   return gulp.src( 'assets/fonts/**/*' )
-    .pipe( gulp.dest( 'test/assets/fonts/' ) )
+    .pipe( gulp.dest( 'dist/assets/fonts/' ) )
 });
 
 gulp.task( 'cache:clear', function( callback ) {
   return cache.clearAll( callback )
 });
 
-gulp.task( 'watch', [ 'browserSync', 'sass' ], function() {
-  gulp.watch( 'assets/sass/**/*.scss', ['sass'] );
-  gulp.watch( 'assets/js/**/*.js', browserSync.reload );
-  gulp.watch( '**/*.hbs', browserSync.reload );
+gulp.task( 'clean:dist', function() {
+  return del.sync( 'dist' );
 });
 
 gulp.task( 'default', function( callback ) {
@@ -85,8 +99,8 @@ gulp.task( 'default', function( callback ) {
 
 gulp.task( 'build', function( callback ) {
   console.log( 'Building files' );
-  runSequence( 'cleand:dist',
-    [ 'sass', 'useref', 'images', 'fonts' ],
+  runSequence( 'clean:dist',
+    [  'sass', 'files', 'images', 'fonts' ],
     callback
   )
 });
