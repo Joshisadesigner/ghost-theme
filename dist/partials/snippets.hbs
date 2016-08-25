@@ -1,0 +1,18 @@
+<!-- Header for sections on home -->
+
+    <header class="cat">
+        <h2 class="cat__header-title">In category: css</h2>
+        <a href="/tag/css" class="cat__header-link">everything</a>
+    </header>
+
+<!-- Tags tooltips & button -->
+
+    <div id="tags-toggler" class="crd__tags-toggler button">
+        <i class="fa fa-tags" aria-hidden="true"></i> tags
+
+        <div class="crd__tags">
+            {{#foreach tags limit="20"}}
+                <a href="{{url}}">#{{name}}</a>
+            {{/foreach}}
+        </div>
+    </div>

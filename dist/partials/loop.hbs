@@ -1,9 +1,8 @@
-<header class="cat">
-    <h2 class="cat__header-title">In category: content</h2>
-    <a href="/tag/content" class="cat__header-link">everything</a>
-</header>
+<!-- this is the post loop - each post will be output using this markup -->
 
-{{#foreach posts}}
+<main class="cont" role="main">
+
+    {{#foreach posts}}
         <article class="crd">
             <div class="crd__inside">
                 {{#if image}}
@@ -16,8 +15,8 @@
 
                 <header class="crd__header">
                     <h3 class="crd__title">
-                        <a href="{{url}}">{{title}}</a>
-                    </h3>
+                    <a href="{{url}}">{{title}}</a>
+                </h3>
                 </header>
 
                 <section class="crd__excerpt">
@@ -37,4 +36,9 @@
                 </footer>
             </div>
         </article>
-{{/foreach}}
+    {{/foreach}}
+
+    <!-- Previous/next page links - displayed on every page -->
+    {{pagination}}
+
+</main>

@@ -1,0 +1,119 @@
+// TAG -
+
+.tag-meditation {
+    .site-wrapper {
+        background: url(../images/bg_pattern-2.png);
+    }
+    .sb {
+        background-color: rgba( #ead9e4, .2 );
+
+        &__header {
+            border-bottom: 10px solid #ead9e4;
+        }
+
+        &__nav a:hover {
+            color: darken( #ead9e4, 35% );
+            background: rgba( #ead9e4, .4 );
+        }
+    }
+
+    .pg {
+        border-top: 1px solid #ead9e4;
+    }
+}
+
+// TAG -
+
+.tag-fromearth {
+    .site-wrapper {
+        background: url(../images/bg_pattern-3.png);
+    }
+    .sb {
+        background-color: rgba( #d9eae2, .2 );
+
+        &__header {
+            border-bottom: 10px solid #d9eae2;
+        }
+
+        &__nav a:hover {
+            color: darken( #d9eae2, 35% );
+            background: rgba( #d9eae2, .4 );
+        }
+    }
+
+    .pg {
+        border-top: 1px solid #d9eae2;
+    }
+}
+
+// TAG -
+
+.tag-levelupment {
+    .site-wrapper {
+        background: url(../images/bg_pattern-4.png);
+    }
+    .sb {
+        background-color: rgba( #f4e8cf, .2 );
+
+        &__header {
+            border-bottom: 10px solid #f4e8cf;
+        }
+
+        &__nav a:hover {
+            color: darken( #f4e8cf, 35% );
+            background: rgba( #f4e8cf, .4 );
+        }
+    }
+
+    .pg {
+        border-top: 1px solid #f4e8cf;
+    }
+}
+
+// TAG -
+
+.tag-chick {
+    .site-wrapper {
+        background: url(../images/bg_pattern-5.png);
+    }
+    .sb {
+        background-color: rgba( #fbc7c7, .2 );
+
+        &__header {
+            border-bottom: 10px solid #fbc7c7;
+        }
+
+        &__nav a:hover {
+            color: darken( #fbc7c7, 25% );
+            background: rgba( #fbc7c7, .4 );
+        }
+    }
+
+    .pg {
+        border-top: 1px solid #fbc7c7;
+    }
+}
+
+// TAG -
+
+.tag-food {
+    .site-wrapper {
+        background: url(../images/bg_pattern-6.png);
+    }
+    .sb {
+        background-color: rgba( #c7e1fb, .2 );
+
+        &__header {
+            border-bottom: 10px solid #c7e1fb;
+        }
+
+        &__nav a:hover {
+            color: darken( #c7e1fb, 35% );
+            background: rgba( #c7e1fb, .4 );
+        }
+    }
+
+    .pg {
+        border-top: 1px solid #c7e1fb;
+    }
+}

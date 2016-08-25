@@ -1,0 +1,9 @@
+<nav>
+    <ul class="sb__nav">
+        {{#foreach navigation}}
+            <li class="sb__nav-item">
+                <a href="{{url absolute="true"}}">{{label}}</a>
+            </li>
+        {{/foreach}}
+    </ul>
+</nav>

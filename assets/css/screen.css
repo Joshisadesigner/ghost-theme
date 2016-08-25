@@ -504,7 +504,7 @@ code {
   -ms-flex-flow: row;
       flex-flow: row;
   overflow: hidden;
-  background: url(../images/bg_pattern.jpg);
+  background: url(../images/bg_pattern-1.png);
 }
 
 @media (max-width: 46.24em) {
@@ -704,6 +704,26 @@ code {
   width: 20px;
   font-family: FontAwesome;
   padding-right: 1px;
+}
+
+.sb__nav a[href*="/tag/meditation"]::before {
+  content: '';
+}
+
+.sb__nav a[href*="/tag/food"]::before {
+  content: '';
+}
+
+.sb__nav a[href*="/tag/levelupment"]::before {
+  content: '';
+}
+
+.sb__nav a[href*="/tag/fromearth"]::before {
+  content: '';
+}
+
+.sb__nav a[href*="/tag/chick"]::before {
+  content: '';
 }
 
 .sb__nav a[href*="facebook.com"]::before {
@@ -954,6 +974,7 @@ code {
 
 .crd__header {
   margin: 0 20px;
+  word-wrap: break-word;
 }
 
 .crd__header a {
@@ -1121,6 +1142,7 @@ code {
   margin: 0;
   border-bottom: 1px dotted #aaa;
   padding-bottom: 30px;
+  word-wrap: break-word;
 }
 
 .post__share {
@@ -1295,6 +1317,111 @@ a {
 
 a:hover {
   color: #75782f;
+}
+
+.tag-meditation .site-wrapper {
+  background: url(../images/bg_pattern-2.png);
+}
+
+.tag-meditation .sb {
+  background-color: rgba(234, 217, 228, 0.2);
+}
+
+.tag-meditation .sb__header {
+  border-bottom: 10px solid #ead9e4;
+}
+
+.tag-meditation .sb__nav a:hover {
+  color: #aa6692;
+  background: rgba(234, 217, 228, 0.4);
+}
+
+.tag-meditation .pg {
+  border-top: 1px solid #ead9e4;
+}
+
+.tag-fromearth .site-wrapper {
+  background: url(../images/bg_pattern-3.png);
+}
+
+.tag-fromearth .sb {
+  background-color: rgba(217, 234, 226, 0.2);
+}
+
+.tag-fromearth .sb__header {
+  border-bottom: 10px solid #d9eae2;
+}
+
+.tag-fromearth .sb__nav a:hover {
+  color: #66aa8a;
+  background: rgba(217, 234, 226, 0.4);
+}
+
+.tag-fromearth .pg {
+  border-top: 1px solid #d9eae2;
+}
+
+.tag-levelupment .site-wrapper {
+  background: url(../images/bg_pattern-4.png);
+}
+
+.tag-levelupment .sb {
+  background-color: rgba(244, 232, 207, 0.2);
+}
+
+.tag-levelupment .sb__header {
+  border-bottom: 10px solid #f4e8cf;
+}
+
+.tag-levelupment .sb__nav a:hover {
+  color: #d3a23e;
+  background: rgba(244, 232, 207, 0.4);
+}
+
+.tag-levelupment .pg {
+  border-top: 1px solid #f4e8cf;
+}
+
+.tag-chick .site-wrapper {
+  background: url(../images/bg_pattern-5.png);
+}
+
+.tag-chick .sb {
+  background-color: rgba(251, 199, 199, 0.2);
+}
+
+.tag-chick .sb__header {
+  border-bottom: 10px solid #fbc7c7;
+}
+
+.tag-chick .sb__nav a:hover {
+  color: #f35050;
+  background: rgba(251, 199, 199, 0.4);
+}
+
+.tag-chick .pg {
+  border-top: 1px solid #fbc7c7;
+}
+
+.tag-food .site-wrapper {
+  background: url(../images/bg_pattern-6.png);
+}
+
+.tag-food .sb {
+  background-color: rgba(199, 225, 251, 0.2);
+}
+
+.tag-food .sb__header {
+  border-bottom: 10px solid #c7e1fb;
+}
+
+.tag-food .sb__nav a:hover {
+  color: #2088ef;
+  background: rgba(199, 225, 251, 0.4);
+}
+
+.tag-food .pg {
+  border-top: 1px solid #c7e1fb;
 }
 
 /*# sourceMappingURL=screen.css.map */

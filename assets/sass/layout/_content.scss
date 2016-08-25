@@ -83,6 +83,7 @@
 
   &__header {
       margin: 0 20px;
+      word-wrap: break-word;
 
       a {
           color: $color__text_brand-2;

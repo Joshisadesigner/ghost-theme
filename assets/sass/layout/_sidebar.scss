@@ -154,6 +154,16 @@
             padding-right: 1px;
         }
 
+        a[href*="/tag/meditation"]::before { content: ''; }
+
+        a[href*="/tag/food"]::before { content: ''; }
+
+        a[href*="/tag/levelupment"]::before { content: ''; }
+
+        a[href*="/tag/fromearth"]::before { content: ''; }
+
+        a[href*="/tag/chick"]::before { content: ''; }
+
         a[href*="facebook.com"]::before { content: '\f09a'; }
 
         a[href*="twitter.com"]::before { content: '\f099'; }

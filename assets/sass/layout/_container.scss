@@ -3,7 +3,7 @@
     display: flex;
     flex-flow: row;
     overflow: hidden;
-    background: url(../images/bg_pattern.jpg);
+    background: url(../images/bg_pattern-1.png);
 
     @include mq( $until: tablet ) {
         flex-flow: column;
